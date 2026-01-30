@@ -54,7 +54,8 @@ ___________________________________
 |  5. Esci                        |
 |_________________________________|
 """)
-
+        
+#CREAZIONE DELLA FUNZIONE nuova_scelta() del menu'
 def nuova_scelta():
     print("""
 ___________________________________   
@@ -71,6 +72,7 @@ ___________________________________
     scelta = str(input("Inserisci una nuova scelta: "))
     return scelta
 
+#CREAZIONE DELLA FUNZIONE menu_report()
 def menu_report():
     print("""
 ________________________________________ 
@@ -84,6 +86,7 @@ ________________________________________
 """
     )
 
+#CREAZIONE DELLA FUNZIONE nuova_scelta__report() del menu' report
 def nuova_scelta_report():
     print("""
 ________________________________________ 
@@ -100,6 +103,8 @@ ________________________________________
     return scelta_report
     
 #CREAZIONE FUNZIONI DEL MENU'
+
+#CREAZIONE DELLA FUNZIONE inserisci_cat() per l'inserimento di una nuova categoria nel db
 def inserisci_cat():
     while True:
         cat = str(input("\nInserisci il nome di una nuova categoria: ")).strip().upper()
@@ -122,7 +127,7 @@ def inserisci_cat():
             break
 
 
-
+#CREAZIONE DELLA FUNZIONE inserisci_spesa() per l'inserimento di una nuova spesa nel db
 def inserisci_spesa():
     while True:
         try:     
@@ -179,6 +184,8 @@ def inserisci_spesa():
     )
     conn.commit()
 
+
+#CREAZIONE DELLA FUNZIONE inserisci_budget() per l'inserimento o l'aggiornamento di un nuovo budget nel db
 mesi = ["01", "GENNAIO", "FEBBRAIO", "MARZO", "APRILE", "MAGGIO", "GIUGNO", "LUGLIO", "AGOSTO", "SETTEMBRE", "OTTOBRE", "NOVEMBRE", "DICEMBRE", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
 def inserisci_budget():
     while True:
@@ -285,6 +292,8 @@ def inserisci_budget():
         conn.commit()
         print("\nBudget di", str(importo)+" € per la categoria", cat_budget, "inserito correttamente per il mese di", mesi[mese_budget],"!")
 
+
+#CREAZIONE DELLA FUNZIONE tot_spese_per_cat() per la lettura dal db della somma di tutte le spese per ogni categoria
 def tot_spese_per_cat():
     cur.execute(
         "SELECT cat_spesa, SUM(importo_spesa) AS totale_spese_per_cat FROM SPESE GROUP BY cat_spesa"
@@ -297,6 +306,8 @@ CATEGORIA            | TOTALE SPESO
     for categoria, totale_spese_per_cat in riga:
         print(str(categoria).ljust(20),"|", str(round(totale_spese_per_cat, 2)).replace(".",",")+" €"),
 
+
+#CREAZIONE DELLA FUNZIONE spese_mensili_vs_budget() per la lettura della somma delle spese per ogni categoria relativa al mese e anno qualora fosse stato impostato un budget per lo stesso
 def spese_mensili_vs_budget():
     print("\n\nSPESE MENSILI VS BUDGET:")
     cur.execute(
@@ -314,6 +325,7 @@ CATEGORIA            | MESE + ANNO            | TOTALE SPESO           | BUDGET 
             print(str(cat_budget).ljust(20),"|", str(str(mesi[mese]).ljust(10) + "" + str(anno)).ljust(22), "|", str(str(round(float(totale_speso), 2))+" €").ljust(22), "|", str(str(importo_budget)+" €").ljust(22), "| OK")
 
 
+#CREAZIONE DELLA FUNZIONE tot_spese_per_cat() per la lettura dal db dell'elenco tutte le spese effettuate ordinate per data
 def elenco_di_tutte_le_spese():
     print("\nELENCO COMPLETO DI TUTTE LE SPESE PER CATEGORIA:")
     cur.execute(
@@ -330,6 +342,7 @@ DATA           | CATEGORIA            | IMPORTO                | DESCRIZIONE
 menu()
 scelta = input("Inserisci la tua scelta: ").strip()
 
+#CREAZIONE DEL CICLO del programma con menu' e sottomenu' implementato con match - case'x' (Funzionamento equivalente allo SWITCH in linguaggio C)
 while True:
     match scelta:
         case "1":
