@@ -39,3 +39,21 @@
 * All'interno del branches 'src' in GitHub è stato caricato il programma completo (main.py) ed il file del database (db_sgspb.db) che è stato creato per registrare il video dimostrativo (demo) del programma. Per creare od inizializzare il proprio DB è sufficiente eliminare il file db_sgspb.db e riavviare il programma.
 
 * Non sono necessari software aggiuntivi o librerie esterne per l'esecuzione del programma, solo aver installato sul proprio dispositivo una versione recente di Python.
+
+————————————————————————————————
+
+> Struttura del Repository GitHub:
+
+PersonalExpenseSystem/
+
+- src/
+    - main.py
+    - db_sgspb.db
+    
+- sql/
+  - database.sql
+
+- demo/
+  - demo_video.mp4
+
+- README.md
