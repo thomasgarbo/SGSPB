@@ -86,7 +86,7 @@ ________________________________________
 """
     )
 
-#CREAZIONE DELLA FUNZIONE nuova_scelta__report() del menu' report
+#CREAZIONE DELLA FUNZIONE nuova_scelta_report() del menu' report
 def nuova_scelta_report():
     print("""
 ________________________________________ 
@@ -101,8 +101,9 @@ ________________________________________
     )
     scelta_report = str(input("Vuoi consultare altri report? Inserisci il numero corrispondente o '4' per tornare al menu' principale: "))
     return scelta_report
-    
-#CREAZIONE FUNZIONI DEL MENU'
+
+
+#CREAZIONE FUNZIONI DEL PROGRAMMA:
 
 #CREAZIONE DELLA FUNZIONE inserisci_cat() per l'inserimento di una nuova categoria nel db
 def inserisci_cat():
