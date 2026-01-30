@@ -9,7 +9,7 @@ cur.execute("PRAGMA foreign_keys = ON;")
 #CREAZIONE DATABASE
 cur.execute("""
         CREATE TABLE IF NOT EXISTS CATEGORIE (
-            nome_cat VARCHAR(50) PRIMARY KEY UNIQUE NOT NULL
+            nome_cat VARCHAR(50) PRIMARY KEY NOT NULL
         )
 """)
 conn.commit()
