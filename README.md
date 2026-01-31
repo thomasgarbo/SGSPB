@@ -3,7 +3,7 @@
 * PROGETTO FINALE DI PROGRAMMAZIONE: Sistema di Gestione delle Spese e del Budget
 * CORSO: Fondamenti di Informatica 
 * STUDENTE: Thomas Garbo
-* MATRICOLA: 0082500049
+* MATRICOLA: 008*****49
 
 ————————————————————————————————
 
