@@ -269,6 +269,7 @@ def inserisci_budget():
                                 (importo, anno_budget, mese_budget, cat_budget)
                             )
                             conn.commit()
+                            print("Budget aggiornato!")
                         return
                     except ValueError:
                         print("Errore! Inserisci un valore corretto. (Es.2190,50)")
