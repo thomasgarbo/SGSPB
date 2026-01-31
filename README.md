@@ -54,6 +54,6 @@ PersonalExpenseSystem/
   - database.sql
 
 - demo/
-  - demo_video.mp4
+  - DEMO_video SGSPB.mov
 
 - README.md
